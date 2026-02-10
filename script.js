@@ -91,5 +91,22 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = "MISTAKE MADE!";
             setTimeout(() => btn.innerText = originalText, 1000);
         });
-    });
+    });    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger-btn');
+    const nav = document.querySelector('header nav');
+
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+    }
 });
