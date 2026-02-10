@@ -397,11 +397,27 @@ footer {
     max-width: 100%;
     height: auto;
     width: auto;
+    width: 100%;
     max-width: 600px;
     display: block;
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Shop page specific layout tweaks to ensure responsiveness */
+.products {
+    padding: 4rem 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-align: center;
 }
 
 /* Responsiveness */
@@ -427,6 +443,15 @@ footer {
 
     .hero h1 {
         font-size: 3.5rem;
+    }
+
+    /* Adjust products section on medium screens */
+    .products {
+        padding: 3rem 6%;
+    }
+
+    .products h2 {
+        font-size: 2rem;
     }
 }
 
@@ -531,6 +556,19 @@ footer {
     nav a {
         padding: 0.6rem 1rem;
         font-size: 0.85rem;
+    }
+
+    /* Small screen adjustments for shop page */
+    .products {
+        padding: 2rem 4%;
+    }
+
+    .products h2 {
+        font-size: 1.4rem;
+    }
+
+    .responsive-img {
+        max-width: 420px;
     }
 }
 
