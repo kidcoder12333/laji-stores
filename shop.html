@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laji Stores | Shop (Don't Buy)</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- <div class="cursor"></div> -->
+
+    <header>
+        <div class="logo">LAJI INNERS 🗑️</div>
+        <nav>
+            <a href="index.html">Home (Escape)</a>
+            <a href="#products">Trash... I mean Treasures</a>
+            <a href="#about">Why Us?</a>
+            <a href="#contact">Don't Contact Us</a>
+            <a href="#" id="cart-btn">Cart (0)</a>
+        </nav>
+    </header>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart (Garbage Bin)</h2>
+            <div id="cart-items">
+                <p>Your cart is empty... just like your promises.</p>
+            </div>
+            <button id="checkout-btn">Checkout (Don't)</button>
+        </div>
+    </div>
+
+    <section class="products" id="products">
+        <h2>OUR "FINEST" SELECTION</h2>
+        <img src="asset/laji.jpeg" alt="Laji Product" class="responsive-img">
+        <div style="display: none;">
+            <audio id="bg-music" loop autoplay>
+                <source src="asset/aha.mp3" type="audio/mp3">
+            </audio>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('load', function () {
+            const audio = document.getElementById('bg-music');
+            const playAudio = () => {
+                audio.play().then(() => {
+                    console.log("Audio started playing");
+                    // Remove listeners once playing
+                    document.removeEventListener('click', playAudio);
+                }).catch(error => {
+                    console.log("Autoplay blocked, waiting for click:", error);
+                });
+            };
+
+            // Try playing immediately
+            playAudio();
+
+            // Fallback: play on first click
+            document.addEventListener('click', playAudio, { once: true });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Laji Stores. We warned you.</p>
+        <p class="tagline">illath kudumbam</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
